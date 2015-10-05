@@ -1,0 +1,24 @@
+{
+  "name": "handlebars-app",
+  "version": "1.0.0",
+  "homepage": "",
+  "authors": [
+    "Esko Cruzeta <eskocruz@users.noreply.github.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "handlebars": "v3.0.3",
+    "material-design-lite": "~1.0.5"
+  }
+}
