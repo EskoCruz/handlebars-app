@@ -3,9 +3,14 @@
  */
 (function () {
 
-
+	registerPartial();
     renderPage();
     renderDogs();
+
+
+	function registerPartial() {
+		Handlebars.registerPartial('dog', $('#dog-template').html());
+	}
 
     function renderPage() {
         var template = $('#index-template').html(),
