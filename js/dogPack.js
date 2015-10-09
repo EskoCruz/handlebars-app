@@ -85,7 +85,7 @@
       this.isCorrect = function() {
         return (this.chosen === 'dog' && this.isDog) ||
       		(this.chosen === 'not dog' && !this.isDog);
-      }
+      };
       return this;
     }
 
@@ -93,7 +93,7 @@
     	var dogs = [
         new Dog('goofy', 'goofy_dog.jpg', 'Goofy', true),
     		new Dog('baby', 'bubby_bunny.jpg', 'Baby', false),
-    	  new Dog('bunny', 'bunny_dog.jpg', 'Bunny', true),
+    	    new Dog('bunny', 'bunny_dog.jpg', 'Bunny', true),
     		new Dog('caged', 'caged_heat.jpg', 'Caged Heat', false),
     		new Dog('cloudy', 'cloudy_bunny.jpg', 'Cloudy', false),
     		new Dog('curious', 'curious_pig.jpg', 'Curious', false),
@@ -104,7 +104,7 @@
     		new Dog('zen', 'meditating_cat.jpg', 'Zen', false),
     		new Dog('friendly', 'middlefinger_otter.jpg', 'Wassup', false),
     		new Dog('moonwalker', 'moonwalking_goat.jpg', 'Moonwalking', false),
-        new Dog('panda', 'panda_dog.jpg', 'Panda', true),
+            new Dog('panda', 'panda_dog.jpg', 'Panda', true),
     		new Dog('party', 'party_dog.jpg', 'Partytime', true),
     		new Dog('sad', 'sad_pony.jpg', 'Sad', false),
     		new Dog('salary', 'salary_dog.jpg', 'Salaryman', true),

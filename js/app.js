@@ -5,6 +5,7 @@
 
 
     renderPage();
+    renderDogs();
 
     function renderPage() {
         var template = $('#index-template').html(),
@@ -18,7 +19,12 @@
         });
     }
 
+    function renderDogs() {
+        var template = $('#dogs-template').html(),
+            compiled = Handlebars.compile(template),
+            rendered = compiled({dogs: DogPack.dogs, language: language});
 
-
+        $('#theDogs').html(rendered);
+    }
 
 })();
