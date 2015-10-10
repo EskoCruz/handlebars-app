@@ -33,12 +33,24 @@
     function renderDogs() {
         var template = $('#dogs-template').html(),
             compiled = Handlebars.compile(template),
-            rendered = compiled({dogs: DogPack.dogs, language: language});
+			filteredDogs = DogPack.getFilteredDogs(DogPack.dogs),
+            rendered = compiled({
+				dogs: DogPack.getPaginatedDogs(filteredDogs),
+				language: language
+			});
 
         $('#theDogs').html(rendered);
 		attachDogButtons();
 		attachNotDogButtons();
+		renderPages(filteredDogs);
     }
+
+	function renderPages(dogs) {
+		var template = $('#page-template').html(),
+			compiled = Handlebars.compile(template),
+			rendered = compiled({ dogs: dogs });
+		$('#pagination').html(rendered);
+	}
 
 	function attachDogButtons() {
 		$('.dog-button').on('click', function () {
