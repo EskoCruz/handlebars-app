@@ -22,6 +22,12 @@
         $('#languageSwitch').on('click', function () {
             DogPack.switchLanguage();
         });
+
+		//Reset Button
+		$('#score').on('click', 'small', function () {
+			DogPack.clearDogs();
+			window.location.href = '?' + Handlebars.helpers.getLanguageFilter(window.language.langId);
+		});
     }
 
     function renderDogs() {
