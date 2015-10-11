@@ -43,6 +43,7 @@
 		attachDogButtons();
 		attachNotDogButtons();
 		renderPages(filteredDogs);
+		renderScore();
     }
 
 	function renderPages(dogs) {
@@ -50,6 +51,16 @@
 			compiled = Handlebars.compile(template),
 			rendered = compiled({ dogs: dogs });
 		$('#pagination').html(rendered);
+	}
+
+	function renderScore() {
+		var template = $('#score-template').html(),
+			compiled = Handlebars.compile(template),
+			rendered = compiled({
+				dogs: DogPack.dogs,
+				language: language
+			});
+		$('#score').html(rendered);
 	}
 
 	function attachDogButtons() {
