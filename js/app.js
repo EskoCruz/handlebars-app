@@ -3,19 +3,12 @@
  */
 (function () {
 
-	registerPartial();
     renderPage();
     renderDogs();
 
 
-	function registerPartial() {
-		Handlebars.registerPartial('dog', $('#dog-template').html());
-	}
-
     function renderPage() {
-        var template = $('#index-template').html(),
-            compiled = Handlebars.compile(template),
-            rendered = compiled(language);
+        var rendered = App.templates.index(language);
 
         $('#main').html(rendered);
 
@@ -31,10 +24,8 @@
     }
 
     function renderDogs() {
-        var template = $('#dogs-template').html(),
-            compiled = Handlebars.compile(template),
-			filteredDogs = DogPack.getFilteredDogs(DogPack.dogs),
-            rendered = compiled({
+        var filteredDogs = DogPack.getFilteredDogs(DogPack.dogs),
+            rendered = App.templates.dogs({
 				dogs: DogPack.getPaginatedDogs(filteredDogs),
 				language: language
 			});
@@ -47,16 +38,12 @@
     }
 
 	function renderPages(dogs) {
-		var template = $('#page-template').html(),
-			compiled = Handlebars.compile(template),
-			rendered = compiled({ dogs: dogs });
+		var rendered = App.templates.dogs({ dogs: dogs });
 		$('#pagination').html(rendered);
 	}
 
 	function renderScore() {
-		var template = $('#score-template').html(),
-			compiled = Handlebars.compile(template),
-			rendered = compiled({
+		var rendered = App.templates.score({
 				dogs: DogPack.dogs,
 				language: language
 			});
